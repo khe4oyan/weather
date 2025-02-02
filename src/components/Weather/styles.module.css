@@ -1,5 +1,6 @@
 .root {
   --minHeight: 50px;
+  --contentColor: rgb(157, 205, 218);
 
   width: 100%;
   min-height: var(--minHeight);
@@ -24,7 +25,9 @@
 
 .content {
   --gap: 15px;
-
+  background: linear-gradient(45deg, var(--contentColor), rgb(255, 255, 255));
+  border: 1px solid var(--contentColor);
+  border-radius: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -75,6 +78,8 @@
     .toggleButton {
       width: 100%;
       margin-top: 3px;
+      border-color: var(--contentColor);
+      background: #ffffff;
     }
   }
 
@@ -89,7 +94,9 @@
     padding: 5px 7px;
 
     button {
+      border-color: var(--contentColor);
       width: 100%;
+      background: none;
     }
   }
 }
