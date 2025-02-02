@@ -1,0 +1,95 @@
+.root {
+  --minHeight: 50px;
+
+  width: 100%;
+  min-height: var(--minHeight);
+}
+
+.DISABLE_PERMISSION_BY_USER {
+  background-color: rgb(255, 190, 190);
+  color: darkred;
+}
+.NOT_SUPPORTED {
+  background-color: rgb(197, 197, 197);
+  color: rgb(44, 44, 44);
+}
+
+.statusInfo {
+  min-height: var(--minHeight);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.content {
+  --gap: 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+  position: relative;
+  padding: 5px;
+  
+  .weatherInfoContainter {
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    
+    .icon {
+      width: var(--minHeight);
+    }
+    
+    .temperature {
+      font-size: 2rem;
+    
+      span {
+        position: relative;
+        bottom: 15px;
+        font-size: .5em;
+      }
+    }
+  
+    .weatherInfo {
+      font-size: .9rem;
+  
+      p {
+        span {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .dateInfo {
+    min-height: var(--minHeight);
+
+    .name {
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .date {
+      font-size: .9rem;
+    }
+    .toggleButton {
+      width: 100%;
+      margin-top: 3px;
+    }
+  }
+
+  .weekDays {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 5px;
+    position: absolute;
+    width: fit-content;
+    top: 100%;
+    right: 0;
+    padding: 5px 7px;
+
+    button {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  min-height: 100dvh;
+  padding: 10px;
+}
+
+button {
+  border: 1px solid black;
+  border-radius: 5px;
+  outline: none;
+  padding: 3px 7px;
+}
+button:hover {
+  cursor: pointer;
+}
