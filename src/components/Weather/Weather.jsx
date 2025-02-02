@@ -95,7 +95,6 @@ export default function Weather() {
         </div> : 
         <div className={classes.content}>
           <div className={classes.weatherInfoContainter}>
-            {/* <img className={classes.icon} src="https://uxwing.com/wp-content/themes/uxwing/download/weather/weather-icon.png" alt="weather_icon" /> */}
             <img className={classes.icon} src={`https://openweathermap.org/img/wn/${weatherData?.weather[0]?.icon}@2x.png`} alt="weather_icon" />
 
             <div>

@@ -67,6 +67,9 @@
 
   .dateInfo {
     min-height: var(--minHeight);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
 
     .name {
       font-weight: bold;
@@ -76,7 +79,6 @@
       font-size: .9rem;
     }
     .toggleButton {
-      width: 100%;
       margin-top: 3px;
       border-color: var(--contentColor);
       background: #ffffff;
