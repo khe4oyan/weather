@@ -1,5 +1,6 @@
 // libs
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 // api
 import API from "../../api/api";
@@ -18,10 +19,11 @@ export default function Weather() {
   const [weatherForecast, setWeatherForecast] = useState([]);
   const [isShowForecast, setIsShowForecast] = useState(false);
   const [weatherData, setWeatherData] = useState(null);
+  const {t, i18n} = useTranslation();
 
   const dateFormatter = (dateString) => {
     const date = new Date(dateString);
-    const formattedDate = date.toLocaleDateString("en-US", {
+    const formattedDate = date.toLocaleDateString("en", {
       weekday: "short",
       month: "short",
       day: "2-digit",
@@ -61,17 +63,17 @@ export default function Weather() {
 
   switch(geolocationStatus) {
     case GEOLOCATION_STATUSES.AWAIT_USER_PERMISSION: {
-      geolocationStatusText = "Weather Component";
+      geolocationStatusText = t("permissionStatusText.enabled");
       break;
     }
     case GEOLOCATION_STATUSES.DISABLE_PERMISSION_BY_USER: {
       geolocationStatusStyles = classes.DISABLE_PERMISSION_BY_USER;
-      geolocationStatusText = "Enabled geolocation permission for weather view";
+      geolocationStatusText = t("permissionStatusText.disabled");
       break;
     }
     case GEOLOCATION_STATUSES.NOT_SUPPORTED: {
       geolocationStatusStyles = classes.NOT_SUPPORTED;
-      geolocationStatusText = "Geolocation is not supported";
+      geolocationStatusText = t("permissionStatusText.notSupported");
       break;
     }
   }
@@ -102,9 +104,9 @@ export default function Weather() {
             </div>
 
             <div className={classes.weatherInfo}>
-              <p>Humidity: <span>{weatherData.main.humidity}%</span></p>
-              <p>Precipitation: <span>{weatherData.rain ?? 0}%</span></p>
-              <p>Wind: <span>{weatherData.wind.speed} km/h</span></p>
+              <p>{t("humidity")}: <span>{weatherData.main.humidity}%</span></p>
+              <p>{t("precipitation")}: <span>{weatherData.rain ?? 0}%</span></p>
+              <p>{t("wind.title")}: <span>{weatherData.wind.speed} {t("wind.km")}</span></p>
             </div>
           </div>
 

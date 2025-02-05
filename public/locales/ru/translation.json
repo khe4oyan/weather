@@ -1,0 +1,14 @@
+{
+  "humidity": "Влажность",
+  "precipitation": "Осадки",
+  "wind": {
+    "title": "Ветер",
+    "km": "км/ч"
+  },
+  "selectOtherDay": "выбрать другой день",
+  "permissionStatusText": {
+    "enabled": "Погода",
+    "disabled": "Разрешение на геолокацию для просмотра погоды включено",
+    "notSupported": "Геолокация не поддерживается"
+  }
+}

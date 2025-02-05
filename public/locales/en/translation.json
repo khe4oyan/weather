@@ -1,0 +1,14 @@
+{
+  "humidity": "Humidity",
+  "precipitation": "Precipitation",
+  "wind": {
+    "title": "Wind",
+    "km": "km/h"
+  },
+  "selectOtherDay": "select other day",
+  "permissionStatusText": {
+    "enabled": "Weather Component",
+    "disabled": "Enabled geolocation permission for weather view",
+    "notSupported": "Geolocation is not supported"
+  }
+}
