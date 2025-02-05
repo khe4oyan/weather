@@ -23,7 +23,7 @@ export default function Weather() {
 
   const dateFormatter = (dateString) => {
     const date = new Date(dateString);
-    const formattedDate = date.toLocaleDateString("en", {
+    const formattedDate = date.toLocaleDateString(i18n.language, {
       weekday: "short",
       month: "short",
       day: "2-digit",
