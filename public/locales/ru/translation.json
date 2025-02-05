@@ -2,7 +2,7 @@
   "humidity": "Влажность",
   "precipitation": "Осадки",
   "wind": {
-    "title": "Ветер",
+    "title": "Скорость ветра",
     "km": "км/ч"
   },
   "selectOtherDay": "выбрать другой день",
