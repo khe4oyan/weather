@@ -7,6 +7,7 @@ import API from "../../api/api";
 
 // styles
 import classes from "./styles.module.css";
+import i18next from "i18next";
 
 export default function Weather() {
   const GEOLOCATION_STATUSES = {
@@ -20,6 +21,7 @@ export default function Weather() {
   const [isShowForecast, setIsShowForecast] = useState(false);
   const [weatherData, setWeatherData] = useState(null);
   const {t, i18n} = useTranslation();
+  const languages = ["en", "ru"];
 
   const dateFormatter = (dateString) => {
     const date = new Date(dateString);
@@ -88,6 +90,11 @@ export default function Weather() {
     // toggleForecast();
   }
 
+  const chooseLanguage = (e) => {
+    const selectLang = e.target.value;
+    i18next.changeLanguage(selectLang);
+  }
+
   return (
     <div className={classes.root}>
       {
@@ -113,7 +120,12 @@ export default function Weather() {
           <div className={classes.dateInfo}>
             <p className={classes.name}>{weatherData.name}</p>
             <p className={classes.date}>{dateFormatter(weatherData.date)}</p>
-            <button className={classes.toggleButton} onClick={toggleForecast}>select other day</button>
+            <button className={classes.toggleButton} onClick={toggleForecast}>{t("selectOtherDay")}</button>
+            <select className={classes.toggleButton} onChange={chooseLanguage} value={i18n.language}>
+              {languages.map((lang, ind) => 
+                <option value={lang} key={ind}>{lang}</option>
+              )}
+            </select>
           </div>
 
           {
